@@ -1,10 +1,29 @@
 public class HelloApp {
+  feature/UC6-substring-method
+
  feature/UC5-enhanced-for-loop
  feature/UC4-display-multiple-names
+ main
  main
     public static void main(String[] args) {
 
         String message;
+
+feature/UC6-substring-method
+        if (args.length == 0) {
+            message = "Hello, World!";
+        } else {
+            StringBuilder nameBuilder = new StringBuilder();
+
+            // Enhanced for loop
+            for (String name : args) {
+                nameBuilder.append(name).append(", ");
+            }
+
+            // Remove trailing ", "
+            String names = nameBuilder.substring(0, nameBuilder.length() - 2);
+
+            message = "Hello, " + names + "!";
 
 feature/UC5-enhanced-for-loop
         if (args.length == 0) {
@@ -30,10 +49,14 @@ feature/UC5-enhanced-for-loop
             message = "Hello, " + joinedNames + "!";
         } else {
             message = "Hello, World!";
+ main
         }
 
         System.out.println(message);
     }
+ feature/UC6-substring-method
+}
+
 
 
     public static void main(String[] args) {
@@ -54,3 +77,4 @@ feature/UC5-enhanced-for-loop
  main
 }
 main
+ main
